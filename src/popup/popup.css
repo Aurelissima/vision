@@ -2,7 +2,7 @@
   width: 250pt;
   height: 400pt;
   background: linear-gradient(0deg, rgba(222,4,142,1) 0%, rgba(73,18,82,1) 38%, rgba(0,0,0,1) 100%);
-  border-radius: 10pt;
+  padding: 5pt;
 }
 
 .tournaments {
@@ -29,6 +29,7 @@
 .team {
   color:#491252
 }
+
 
 .container {
   height: 100%;
