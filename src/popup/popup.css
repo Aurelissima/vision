@@ -1,19 +1,31 @@
-.body {
+.main {
   width: 250pt;
   height: 400pt;
   background: linear-gradient(0deg, rgba(222,4,142,1) 0%, rgba(73,18,82,1) 38%, rgba(0,0,0,1) 100%);
-  padding: 5pt;
 }
 
 .tournaments {
   padding: 10pt;
-  margin: 10pt 0pt;
+  font-size: xx-large;
+  color: white;
+  display: flex;
+}
+
+.mainHeader {
   background-color: white;
-  border-radius: 5pt;
-  font-size: x-large;
-  color: #491252;
+  color: rgba(73,18,82,1);
+  height: 40pt;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+#header-logo {
+  height: 30pt
+}
+
+.accordionContent {
+  padding: 0pt;
 }
 
 .addButton {

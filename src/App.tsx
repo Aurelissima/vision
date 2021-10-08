@@ -1,63 +1,88 @@
-import React from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import './App.css';
+import vision_icon from './assets/vision_icon.png';
 import './popup/popup.css';
+import Teams from './teams/teams';
 
-function App() {
+// type SeriesRaw = {
+//   id: number;
+//   league_id: number;
+//   begin_at: string;
+//   end_at: string;
+//   description: string | null;
+//   full_name: string;
+//   modified_at: string;
+//   name: string | null;
+//   season: string;
+//   tier: string;
+//   winner_id: number | null;
+//   winner_type: string | null;
+//   year: number | Date;
+// }
+
+// type VideoGame = {
+//   current_version: string;
+//   id: number;
+//   name: string;
+//   slug: string;
+// }
+
+// type LeagueRaw = {
+//   id: number;
+//   image_url: string;
+//   modifiedAt: string;
+//   name: string;
+//   series: SeriesRaw[];
+//   slug: string;
+//   url: string | null;
+//   videogame: VideoGame;
+// }
+
+
+ function App() {
+  
+  // const params = `filter[opponent_id]=[${teamIds.then(ids => ids[0])}]`;
+
+  
+  // const leaguesResponse = (fetch(`${baseUrl}matches`, {
+  // method: 'GET',
+  // mode: 'cors',
+  // headers: {
+  //     'Authorization': `Bearer ${accessToken}`,
+  //     'Accept': 'application/json'
+  // },
+  // })) as unknown as Promise<LeagueRaw[]>;
+
+  // const transformSeries = (series: SeriesRaw) => {
+  //   return {
+  //     id: series.id,
+  //     leagueId: series.league_id,
+  //     name: series.full_name,
+  //     year: series.year,
+  //     season: series.season,
+  //     startAt: series.begin_at,
+  //     endAt: series.end_at,
+  //     winnerId: series.winner_id,
+  //     winnerType: series.winner_type,
+  //   }
+  // }
+
+  // const transformLeagues = (leagues: LeagueRaw) => {
+
+  // }
+
   return (
     <div className="App">
-      <body className="body">
-  <div className="container">
-    <div className="tournaments">
-      <div>Tournaments</div>
-      <button className="addButton">Add More</button>
-    </div>
-    <div className="collapsible">
-      <div className="name">LEC</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">LCK</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">LCS</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">LCL</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">LPL</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="tournaments">
-      <div>Teams</div>
-      <button className="addButton">Add More</button>
-    </div>
-    <div className="collapsible">
-      <div className="name">TSM</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">G2</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">T1</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">FNC</div>
-      <div className="details">Kek</div>
-    </div>
-    <div className="collapsible">
-      <div className="name">C9</div>
-      <div className="details">Kek</div>
-    </div>
-  </div>
-  <script src="popup.js"></script>
-</body>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+      <div className="main">
+        <div className="container">
+          <div className="mainHeader">
+            <img src={vision_icon} alt="Logo" id="header-logo"/>
+            <MenuIcon></MenuIcon>
+          </div>
+        </div>
+        <Teams></Teams>
+      </div>
     </div>
   );
 }
