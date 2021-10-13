@@ -80,8 +80,8 @@ import Teams from './teams/teams';
             <img src={vision_icon} alt="Logo" id="header-logo"/>
             <MenuIcon></MenuIcon>
           </div>
-        </div>
         <Teams></Teams>
+        </div>
       </div>
     </div>
   );

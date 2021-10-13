@@ -1,7 +1,7 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { getTeams } from './api.service';
+import { getTeams, getUpcomingMatches } from './api.service';
 
 type TeamRaw = {
   acronym: string;
@@ -10,7 +10,8 @@ type TeamRaw = {
 }
 
 function Teams () {
-  const [teams, setTeams] = useState<TeamRaw[]>([])
+  const [teams, setTeams] = useState<TeamRaw[]>([]);
+  // const [upcomingMatches, setUpcomingMatches] =useState<>();
   
   useEffect(() => {
     const baseUrl = new URL(process.env.REACT_APP_BASE_URL || '');
@@ -18,9 +19,11 @@ function Teams () {
     if(!teams.length) {
       getTeams(baseUrl, accessToken).then(response => {
         setTeams(response as unknown as TeamRaw[]);
+        console.log({response})
+        getUpcomingMatches(baseUrl, accessToken, response[1].id).then(res => console.log({res}))
       });
     }
-  }, [teams.values, teams.length]);
+  }, [teams.values, teams.length, teams]);
 
   return (
     <div>
